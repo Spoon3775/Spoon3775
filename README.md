@@ -14,10 +14,8 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
-
-### 📊 My GitHub Stats
+### 📊 My GitHub Stats & Activity
 
 <p align="center">
-  <img src="generated/stats.svg" alt="My GitHub Stats" />
-  <img src="generated/langs.svg" alt="My Top Languages" />
+  <img src="metrics.svg" alt="Metrics" width="800">
 </p>
