@@ -8,25 +8,17 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
   # Also run on every push to the main branch
-  push:
-    branches:
-      - main
-      
-
 jobs:
-  github-metrics:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write # Needed to write the generated files
+  metrics:
+    runs-on:
     steps:
-      - uses: lowlighter/metrics@latest
+      - name: Main Content
+        if: ${{ success() || failure() }}
+        uses: lowlighter/metrics@latest
         with:
-          # Your GitHub token
-          # This will use the GH_TOKEN secret you already created
+          filename: github-metrics.svg
           token: ${{ secrets.GH_TOKEN }}
-
-         
-          # The base content of the file
+          
           base: header, activity, community, repositories, metadata
           
         
@@ -42,5 +34,17 @@ jobs:
           plugin_lines_history: yes
           plugin_lines_sections: header, footer
           plugin_lines_indepth: yes
+      - name: Achievements
+        if: ${{ success() || failure() }}
+        uses: lowlighter/metrics@latest
+        with:
+          filename: achievements.svg
+          token: ${{ secrets.GH_TOKEN }}
 
-          # Timezone
+          base: ""
+          output_action: gist
+          committer_gist: ${{ secrets.GIST }}
+          plugin_achievements: yes
+          plugin_achievements_display: compact
+          plugin_fortune: yes
+ 
