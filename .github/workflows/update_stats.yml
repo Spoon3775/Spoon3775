@@ -1,52 +1,48 @@
 # .github/workflows/update_stats.yml
 
-name: GitHub Stats Card
-
+name: Metrics
 on:
   # Run automatically every 6 hours
   schedule:
     - cron: '0 */6 * * *'
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+  # Also run on every push to the main branch
+  push:
+    branches:
+      - main
+      - master
 
 jobs:
-  build:
+  github-metrics:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # Needed to write the generated files
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Update GitHub Stats Card
-        uses: anuraghazra/github-readme-stats@master
+      - uses: lowlighter/metrics@latest
         with:
-          # This is the PAT you stored as a secret
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          # The username of the account
-          USERNAME: ${{ github.repository_owner }}
-          # The file to write the stats to
-          TO_FILE: 'generated/stats.svg'
-          # Other options
-          SHOW_ICONS: 'true'
-          THEME: 'tokyonight' # Change this to your preferred theme
-          COUNT_PRIVATE: 'true'
-          HIDE_BORDER: 'true'
+          # Your GitHub token
+          # This will use the GH_TOKEN secret you already created
+          token: ${{ secrets.GH_TOKEN }}
 
-      - name: Update Top Languages Card
-        uses: anuraghazra/github-readme-stats@master
-        with:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          USERNAME: ${{ github.repository_owner }}
-          TO_FILE: 'generated/langs.svg'
-          LAYOUT: 'compact'
-          THEME: 'tokyonight' # Change this to your preferred theme
-          COUNT_PRIVATE: 'true'
-          HIDE_BORDER: 'true'
+          # OPTIONS
+          # The base content of the file
+          base: header, activity, community, repositories, metadata
+          
+          # Add more plugins here!
+          # See https://github.com/lowlighter/metrics/blob/master/action.yml for a full list
+          plugin_isocalendar: yes
+          plugin_languages: yes
+          plugin_lines: yes
+          
+          # Languages options
+          plugin_languages_limit: 8
+          plugin_languages_threshold: 0%
+          
+          # Lines of code options
+          plugin_lines_history: yes
+          plugin_lines_sections: header, footer
+          plugin_lines_indepth: yes
 
-      - name: Commit and Push
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add .
-          # The [skip ci] part is important to prevent an infinite loop of actions
-          git commit -m "chore: update stats [skip ci]" || exit 0
-          git push
+          # You can change the timezone
+          config_timezone: America/New_York
