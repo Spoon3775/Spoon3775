@@ -1,1 +1,26 @@
+# .github/workflows/test-achievements.yml
 
+name: Achievements Debug Test
+on:
+  # This allows us to run it manually
+  workflow_dispatch:
+
+jobs:
+  achievements-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Achievements Plugin Only
+        uses: lowlighter/metrics@latest
+        with:
+          # Use the same GH_TOKEN secret
+          token: ${{ secrets.GH_TOKEN }}
+
+          # Use a different filename for this test
+          filename: achievements-test-output.svg
+
+          # IMPORTANT: Use an empty base to ONLY run plugins
+          base: ""
+
+          # Enable only the achievements plugin
+          plugin_achievements: yes
+          plugin_achievements_display: detailed # Detailed view for better debugging
