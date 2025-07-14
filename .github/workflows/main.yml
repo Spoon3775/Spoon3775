@@ -1,1 +1,24 @@
+name: Metrics
+on:
+  # Run automatically every 6 hours
+  schedule:
+    - cron: '0 */1 * * *'
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  # Also run on every push to the main branch
+  push:
+    branches:
+      - main
+      
 
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Needed to write the generated files
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          # Your GitHub token
+          # This will use the GH_TOKEN secret you already created
+          token: ${{ secrets.GH_TOKEN }}
