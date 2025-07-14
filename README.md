@@ -17,5 +17,5 @@ Here are some ideas to get you started:
 ### 📊 My GitHub Stats & Activity
 
 <p align="center">
-  <img src="metrics.svg" alt="Metrics" width="800">
+  <img src="github-metrics.svg" alt="Metrics" width="800">
 </p>
