@@ -10,7 +10,7 @@ on:
   # Also run on every push to the main branch
 jobs:
   metrics:
-    runs-on:
+    runs-on: ubuntu-latest
     steps:
       - name: Main Content
         if: ${{ success() || failure() }}
