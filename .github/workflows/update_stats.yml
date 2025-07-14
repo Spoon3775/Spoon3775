@@ -22,32 +22,26 @@ jobs:
       - uses: lowlighter/metrics@latest
         with:
           # Your GitHub token
-          # This will use the GH_TOKEN secret you already created
           token: ${{ secrets.GH_TOKEN }}
 
-          # OPTIONS
-          # The base content of the file
-          base: header, activity, community, repositories, achievements
+         
+          base: header, activity, community, achievements, repositories, metadata
           
-          # Add more plugins here!
-          # See https://github.com/lowlighter/metrics/blob/master/action.yml for a full list
+          # --- ENABLED PLUGINS ---
           plugin_isocalendar: yes
           plugin_languages: yes
           plugin_lines: yes
-          
-          # Languages options
+          plugin_achievements: yes # Enable the achievements plugin
+
+          # --- LANGUAGES PLUGIN OPTIONS ---
           plugin_languages_limit: 8
           plugin_languages_threshold: 0%
           
-          # Lines of code options
-          plugin_lines_history: yes
           plugin_lines_sections: header, footer
-          plugin_lines_indepth: yes
           
-          # Achievements display
-          plugin_achievements: yes
-          plugin_achievements_display: compact 
+          # --- ACHIEVEMENTS PLUGIN OPTIONS ---
+          plugin_achievements_display: compact
+          plugin_achievements_threshold: C
           plugin_achievements_limit: 6
-
           
  
