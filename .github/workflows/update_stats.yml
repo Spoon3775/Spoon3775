@@ -31,7 +31,7 @@ jobs:
           plugin_isocalendar: yes
           plugin_languages: yes
           plugin_lines: yes
-          plugin_achievements: yes # Enable the achievements plugin
+          
 
           # --- LANGUAGES PLUGIN OPTIONS ---
           plugin_languages_limit: 8
@@ -39,9 +39,6 @@ jobs:
           
           plugin_lines_sections: header, footer
           
-          # --- ACHIEVEMENTS PLUGIN OPTIONS ---
-          plugin_achievements_display: compact
-          plugin_achievements_threshold: C
-          plugin_achievements_limit: 6
+        
           
  
