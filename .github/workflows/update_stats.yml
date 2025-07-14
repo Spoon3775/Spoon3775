@@ -27,7 +27,7 @@ jobs:
 
           # OPTIONS
           # The base content of the file
-          base: header, activity, community, repositories, metadata
+          base: header, activity, community, repositories, achievements
           
           # Add more plugins here!
           # See https://github.com/lowlighter/metrics/blob/master/action.yml for a full list
@@ -43,7 +43,11 @@ jobs:
           plugin_lines_history: yes
           plugin_lines_sections: header, footer
           plugin_lines_indepth: yes
+          
+          # Achievements display
+          plugin_achievements: yes
+          plugin_achievements_display: compact 
+          plugin_achievements_limit: 6
 
-          # You can change the timezone
-          config_timezone: America/New_York
+          
  
