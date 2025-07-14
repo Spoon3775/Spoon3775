@@ -5,9 +5,9 @@ on:
   # Run automatically every 6 hours
   schedule:
     - cron: '0 */6 * * *'
-  # Allows you to run this workflow manually from the Actions tab
+    
   workflow_dispatch:
-  # Also run on every push to the main branch
+
   push:
     branches:
       - main
@@ -17,16 +17,15 @@ jobs:
   github-metrics:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Needed to write the generated files
+      contents: write 
     steps:
+
       - uses: lowlighter/metrics@latest
         with:
           # Your GitHub token
-          # This will use the GH_TOKEN secret you already created
           token: ${{ secrets.GH_TOKEN }}
 
-          # OPTIONS
-          # The base content of the file
+          # Add "topics" to the base layout
           base: header, activity, community, repositories, topics, languages, metadata
 
           # ------------------------------------------------------------------
@@ -42,16 +41,5 @@ jobs:
           # Other plugins you have enabled
           plugin_languages: yes
           plugin_languages_limit: 8
-          plugin_isocalendar: yes
-          plugin_lines: yes
           
-          # Languages options
-          plugin_languages_threshold: 0%
-          
-          # Lines of code options
-          plugin_lines_history: yes
-          plugin_lines_sections: header, footer
-          plugin_lines_indepth: yes
-
-          # You can change the timezone
-          config_timezone: America/New_York
+          # ... any other plugins like lines, isocalendar, etc.
