@@ -8,7 +8,7 @@
 
 ## Languages 💻, Frameworks 📝 and Libraries 📚
 ### I program in a variety of languages and am familiar with several Frameworks and Libraries
-### I am currently knowledgable in the following Languages, Frameworks & Libraries:
+### Knowledgable in the following Languages, Frameworks & Libraries:
 [![My Langs](https://skillicons.dev/icons?i=cs,cpp,js,postgres,py,html,css,lua,react,arduino)](https://skillicons.dev)
 ### Currently, I am learning:
 ![Currently Learning](https://go-skill-icons.vercel.app/api/icons?i=c,asm&titles=true)
