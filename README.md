@@ -32,7 +32,7 @@
   
   <h4>Currently Learning</h4>
   <p>
-      <img src="https://go-skill-icons.vercel.app/api/icons?i=asm&titles=true" />
+      <img src="https://go-skill-icons.vercel.app/api/icons?i=asm,java&titles=true" />
   </p>
 
   <h4>Platforms I Utilise</h4>
