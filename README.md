@@ -39,7 +39,11 @@
   <p>
     <img src="https://go-skill-icons.vercel.app/api/icons?i=kali,linux,windows&theme=dark"/>
   </p>
-  
+
+  <h4>Tools & Software</h4>
+  <p>
+    <img src="https://go-skill-icons.vercel.app/api/icons?i=wireshark&theme=dark"/>
+  </p>
   <h4>Future Interests</h4>
   <p>
     <a href="https://skillicons.dev">
