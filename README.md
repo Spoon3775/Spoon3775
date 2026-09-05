@@ -32,17 +32,17 @@
   
   <h4>Currently Learning</h4>
   <p>
-      <img src="https://go-skill-icons.vercel.app/api/icons?i=asm,java&titles=true" />
+      <img src="https://go-skill-icons.vercel.app/api/icons?i=asm,java,kotlin&titles=true" />
   </p>
 
   <h4>Platforms I Utilise</h4>
   <p>
-    <img src="https://go-skill-icons.vercel.app/api/icons?i=kali,linux,windows&theme=dark"/>
+    <img src="https://go-skill-icons.vercel.app/api/icons?i=kali,linux,windows,android&theme=dark"/>
   </p>
 
   <h4>Tools & Software</h4>
   <p>
-    <img src="https://go-skill-icons.vercel.app/api/icons?i=wireshark&theme=dark"/>
+    <img src="https://go-skill-icons.vercel.app/api/icons?i=wireshark,vscode,visualstudio,androidstudio&theme=dark"/>
   </p>
   <h4>Future Interests</h4>
   <p>
